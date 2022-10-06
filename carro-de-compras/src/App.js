@@ -1,6 +1,9 @@
 import {Component } from 'react'
 import logo from './logo.svg';
 import Productos from './components/Productos'
+import Layout from './components/Layout'
+import Title from './components/Title'
+import NavBar from './components/NavBar'
 import './App.css';
 
 class App extends Component {
@@ -14,10 +17,15 @@ class App extends Component {
   render() {
     return(
       <div>
-        <Productos
-          agregarAlcarro={() => console.log('No hace nada')}
-          productos={this.state.productos}
-        />
+        <NavBar/>
+        <Title/>
+        <Layout>
+          <Productos
+            agregarAlcarro={() => console.log('No hace nada')}
+            productos={this.state.productos}
+          />
+        </Layout>
+        
       </div>
     )
   }
